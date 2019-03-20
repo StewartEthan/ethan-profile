@@ -1,0 +1,8 @@
+{
+  "learn.frontier": "Learn Frontier",
+  "logo": "Spinning Frontier Logo",
+  "nav.home": "Home",
+  "nav.userInfo": "User Info",
+  "update.instructions": "Edit <1>src/components/App.js</1> and save to reload.",
+  "user.greeting": "Hello, {{user.displayName}}!"
+}

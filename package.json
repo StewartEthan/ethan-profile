@@ -1,0 +1,67 @@
+{
+  "name": "ethan-profile",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/core": "^10.0.9",
+    "@fs/react-scripts": "1.7.2",
+    "@fs/zion-axios": "^0.1.6",
+    "@fs/zion-error-boundary": "0.0.4",
+    "@fs/zion-locale": "^0.2.3",
+    "@fs/zion-router": "^0.1.7",
+    "@fs/zion-subnav": "^1.0.1",
+    "@fs/zion-user": "^0.1.17",
+    "exo": "github:fs-webdev/exo",
+    "express": "^4.16.4",
+    "hf": "github:fs-webdev/hf#cra",
+    "http-proxy-middleware": "^0.19.1",
+    "i18next": "^15.0.7",
+    "prop-types": "^15.7.2",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-i18next": "^10.5.1",
+    "snow": "github:fs-webdev/snow#cra",
+    "startup": "github:fs-webdev/startup"
+  },
+  "scripts": {
+    "build": "react-scripts build",
+    "build:prod": "PUBLIC_URL=https://edge.fscdn.org/assets/ react-scripts build",
+    "heroku-postbuild": "npm run build:prod",
+    "heroku-prebuild": "./heroku-prebuild.sh",
+    "start": "react-scripts start",
+    "test": "eslint src/ && react-scripts test",
+    "locales:sync": "i18next-scanner --output src/locales 'src/**/*.js'",
+    "styleguide": "styleguidist server --open",
+    "styleguide:build": "styleguidist build",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix"
+  },
+  "eslintConfig": {
+    "extends": [
+      "@fs/eslint-config-frontier-react"
+    ]
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ],
+  "main": "./server.js",
+  "engines": {
+    "node": "10"
+  },
+  "devDependencies": {
+    "@alienfast/i18next-loader": "^1.0.18",
+    "@fs/configurations": "^1.3.4",
+    "@fs/eslint-config-frontier-react": "^1.3.4",
+    "@fs/styleguidist-overrides": "^1.3.0",
+    "@fs/zion-testing-library": "^0.1.4",
+    "dotenv": "^7.0.0",
+    "eslint": "^5.12.0",
+    "i18next-scanner": "^2.10.0",
+    "jest-dom": "^3.1.3",
+    "react-styleguidist": "^9.0.4",
+    "webpack": "^4.28.3"
+  }
+}
