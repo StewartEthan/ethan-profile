@@ -1,35 +1,52 @@
 import React from 'react'
 import { css } from '@emotion/core'
-import { Trans } from 'react-i18next'
+// import { Trans } from 'react-i18next'
+import selfie from '../static/selfie.jpg'
 
-import Logo from './Logo'
-import HomeHeader from './HomeHeader'
+const imgCss = css`
+  max-width: 200px;
+  width: 15vw;
+`
 
-const Home = () => (
-  <div
-    css={css`
-      text-align: center;
-    `}
-  >
-    <HomeHeader>
-      <Logo />
+export default function Home() {
+  return (
+    <>
+      <h1>Hello there!</h1>
       <p>
-        <Trans i18nKey="update.instructions">
-          Edit <code>src/components/App.js</code> and save to reload.
-        </Trans>
+        My name is Ethan Stewart. I have been at FamilySearch since 2016 and am currently the
+        front-end tech lead for the Help team. I love Star Wars, video games, and writing code.
+        Click the links above to learn more about me.
       </p>
-      <a
-        css={css`
-          color: #61dafb;
-        `}
-        href="https://www.familysearch.org/frontier/docs/#/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <Trans i18nKey="learn.frontier">Learn Frontier</Trans>
-      </a>
-    </HomeHeader>
-  </div>
-)
+      <img src={selfie} alt="Selfie of Ethan" css={imgCss} />
+    </>
+  )
+}
 
-export default Home
+// const Home = () => (
+//   <div
+//     css={css`
+//       text-align: center;
+//     `}
+//   >
+//     <HomeHeader>
+//       <Logo />
+//       <p>
+//         <Trans i18nKey="update.instructions">
+//           Edit <code>src/components/App.js</code> and save to reload.
+//         </Trans>
+//       </p>
+//       <a
+//         css={css`
+//           color: #61dafb;
+//         `}
+//         href="https://www.familysearch.org/frontier/docs/#/"
+//         target="_blank"
+//         rel="noopener noreferrer"
+//       >
+//         <Trans i18nKey="learn.frontier">Learn Frontier</Trans>
+//       </a>
+//     </HomeHeader>
+//   </div>
+// )
+
+// export default Home
