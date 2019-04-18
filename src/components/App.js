@@ -5,7 +5,7 @@ import { Trans } from 'react-i18next'
 import Home from './home/Home'
 // import UserInfo from './user/UserInfo'
 import RandomFacts from './randomFacts/RandomFacts'
-import RandomStarWars from './randomStarWars/StarWars'
+import StarWars from './starWars/StarWars'
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
       <Router>
         <RequiresAuth path="/" component={Home} />
         <RequiresAuth path="/random-facts" component={RandomFacts} />
-        <RequiresAuth path="/star-wars" component={RandomStarWars} />
+        <RequiresAuth path="/star-wars" component={StarWars} />
         <NotFound default />
       </Router>
     </>

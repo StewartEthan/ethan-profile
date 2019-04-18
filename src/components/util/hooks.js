@@ -44,3 +44,25 @@ export function useRandomStarWarsGif({ defaultValue = {} } = {}) {
   React.useEffect(requestNewGif, [])
   return [gifUrl, requestNewGif]
 }
+
+export function useStarWarsCharacterSearch({ defaultValue = null } = {}) {
+  const [results, setResults] = React.useState(defaultValue)
+  let fetching = false
+  function requestNewResults(query) {
+    if (fetching) return
+    fetching = true
+    const url = `https://swapi.co/api/people/?search=${encodeURIComponent(query)}`
+    fetch(url)
+      .then(res => res.json())
+      .then(raw => raw.results)
+      .catch(err => {
+        console.error(`Couldn't fetch search results for query ${query}`, err)
+        return []
+      })
+      .then(setResults)
+      .then(() => {
+        fetching = false
+      })
+  }
+  return [results, requestNewResults]
+}

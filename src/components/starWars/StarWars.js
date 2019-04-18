@@ -3,6 +3,7 @@ import React from 'react'
 import Button from '@fs/zion-button'
 import { css } from '@emotion/core'
 import { useRandomStarWarsGif } from '../util/hooks'
+import CharacterSearch from './CharacterSearch'
 
 const containerStyle = css`
   display: grid;
@@ -21,7 +22,7 @@ const containerStyle = css`
   }
 `
 
-export default function RandomStarWars() {
+export default function StarWars() {
   const [gifUrl, requestNewGif] = useRandomStarWarsGif()
   return (
     <div css={containerStyle}>
@@ -29,10 +30,20 @@ export default function RandomStarWars() {
       <p>
         I have a lifelong obsession. Here's some Star Wars related stuff I thought would be fun.
       </p>
-      <h2>Random Star Wars GIF</h2>
+      <h2>Character Search</h2>
+      <p>
+        Use the input below to search for a Star Wars character by name. Click on a result to see
+        more details about that character.
+      </p>
+      <CharacterSearch />
+      <h2>Random GIF</h2>
       <p>
         In the interest of making sure anyone seeing this page has enough Star Wars in their life,
         here is a random Star Wars GIF from Giphy. Use the button below to change the GIF.
+      </p>
+      <p>
+        (If it doesn't load within a few seconds, my free API access has probably timed out from
+        overusage. Should be back later)
       </p>
       {gifUrl.image_url ? <img src={gifUrl.image_url} alt={gifUrl.title} /> : 'Loading gif...'}
       <Button type="button" kind="recommended" onClick={requestNewGif}>
@@ -48,7 +59,6 @@ export default function RandomStarWars() {
           width="560"
           height="315"
           src="https://www.youtube.com/embed/adzYW5DZoWs"
-          frameBorder="0"
           allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
           allowFullScreen
         />
